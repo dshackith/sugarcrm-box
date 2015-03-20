@@ -1,5 +1,10 @@
 
-$sugarDir = "bsys-sugar-ws"
+define apache::loadmodule () {
+     exec { "/usr/sbin/a2enmod $name" :
+          unless => "/bin/readlink -e /etc/apache2/mods-enabled/${name}.load",
+          notify => Service[apache2]
+     }
+}
 
 class webserver {
   import 'apache'
@@ -9,8 +14,8 @@ class webserver {
   # class { 'mysql': }
 
   class { 'apache::mod::php':}
-  class { 'apache::mod::rerwite':}
-  class { 'apache::mod::cache':}
+  apache::loadmodule{"rewrite": }
+  apache::loadmodule{"cache": }
   
   apache::vhost { 'default':
     priority      => '3',
