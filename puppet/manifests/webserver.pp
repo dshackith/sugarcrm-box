@@ -3,10 +3,8 @@ $sugarDir = "bsys-sugar-ws"
 
 class webserver {
   import 'apache'
-  class {'apache':
-  package {['php5', 'php5-mysql', 'php5-gd', 'php5-imap', 'php-apc', 'php5-memcached', 'libapache2-mod-php5', 'unzip', 'git', 'php5-curl']: }
-
-  }
+  class {'apache': }
+  package {['php5', 'php5-mysql', 'php5-gd', 'php5-imap', 'php-apc', 'php5-memcached', 'libapache2-mod-php5', 'unzip', 'git', 'php5-curl']: }  
   class { 'mysql::server': }
   class { 'mysql': }
 
