@@ -3,10 +3,10 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "hashicorp/precise64"
-  #config.vm.provider "virtualbox" do |v| 
-  #  v.customize ["modifyvm", :id, "--cpus", "2"] 
-  #  v.customize ["modifyvm", :id, "--memory", "1280"] 
-  #end
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 1024
+    v.cpus = 2
+  end
     
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
