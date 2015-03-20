@@ -13,5 +13,5 @@ Vagrant::Config.run do |config|
   config.vm.host_name = 'sugarcrm'
   config.vm.network :hostonly, "192.168.50.4"
   config.vm.share_folder "www", "/var/www/html/", "../bsys-sugar/src/sugar/" , :owner => 'www-data', :group => 'www-data'
-  config.vm.share_folder "artifacts", "/tmp/share", "./share"
+  config.vm.share_folder "artifacts", "/tmp/share", "../share"
 end
