@@ -23,7 +23,7 @@ class webserver {
 
 class sugarcrm {
   exec { 'copy_config':
-    command => "cp /share/db_config.php /var/www/html/db_config.php",
+    command => "cp /tmp/share/db_config.php /var/www/html/db_config.php",
     path => '/bin'
   }
 }
