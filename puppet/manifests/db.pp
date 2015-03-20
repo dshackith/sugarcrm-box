@@ -7,11 +7,11 @@ class db {
     }
   }
   mysql::db { 'sugarcrm':
-    user     => 'myuser',
-    password => 'mypass',
+    user     => 'sugarcrm',
+    password => 'sugarcrm',
     host     => 'localhost',
     grant    => ['all'],
-    sql      => '/tmp/share/db.sql'
+    sql      => ['/tmp/share/sugar_db_structure.sql','/tmp/share/sugar_basic_data.sql']
   }
 
 }
