@@ -13,7 +13,7 @@ class webserver {
   apache::vhost { 'default':
     priority      => '3',
     port          => '80',
-    docroot       => '/var/www/${sugarDir}',
+    docroot       => '/var/www/html',
     override      => 'All',
   }
   php::module { [ 'mysql', 'ldap', 'pdo','mbstring' ]: }
@@ -23,7 +23,7 @@ class webserver {
 
 class sugarcrm {
   exec { 'copy_config':
-    command => "cp /vagrant/manifests/sugarcrm/files/db_config.php /var/www/${sugarDir}/db_config.php",
+    command => "cp /share/db_config.php /var/www/html/db_config.php",
     path => '/bin'
   }
 }
