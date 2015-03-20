@@ -8,8 +8,8 @@ class webserver {
   # class { 'mysql::server': }
   # class { 'mysql': }
 
-  class { 'apache::mod::php':
-  }
+  class { 'apache::mod::php':}
+  include apache::mod::rerwite
   apache::vhost { 'default':
     priority      => '3',
     port          => '80',
