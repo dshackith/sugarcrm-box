@@ -3,10 +3,10 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "hashicorp/precise64"
-  config.vm.provider "virtualbox" do |v| 
-    v.customize ["modifyvm", :id, "--cpus", "2"] 
-    v.customize ["modifyvm", :id, "--memory", "1280"] 
-  end
+  #config.vm.provider "virtualbox" do |v| 
+  #  v.customize ["modifyvm", :id, "--cpus", "2"] 
+  #  v.customize ["modifyvm", :id, "--memory", "1280"] 
+  #end
     
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
     puppet.module_path = "puppet/modules"
   end
   
-  config.vm.provision "shell", path: "install-elasticsearch.sh" 
+  config.vm.provision "shell", path: "./install-elasticsearch.sh" 
   
   config.vm.forward_port 80, 8888
   config.vm.host_name = 'sugarcrm'
