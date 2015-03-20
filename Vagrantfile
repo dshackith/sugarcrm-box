@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
+Vagrant::Configure("2") do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
