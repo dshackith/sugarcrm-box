@@ -9,7 +9,9 @@ class webserver {
   # class { 'mysql': }
 
   class { 'apache::mod::php':}
-  include apache::mod::rerwite
+  class { 'apache::mod::rerwite':}
+  class { 'apache::mod::cache':}
+  
   apache::vhost { 'default':
     priority      => '3',
     port          => '80',
