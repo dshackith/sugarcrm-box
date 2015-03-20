@@ -5,6 +5,9 @@ class { 'elasticsearch':
     'cluster.name' => 'sugarcrm', 
     'network' => { 'host' => '0.0.0.0', } 
     }, 
+  package { 'openjdk-7-jdk':
+    ensure => latest,
+  }
   java_install => true, 
 } 
 elasticsearch::instance { 'es-01': } 
