@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
     puppet.module_path = "puppet/modules"
   end
   
-  config.vm.provision "shell", path: "./install-elasticsearch.sh" 
+  config.vm.provision "shell", path: "install-elasticsearch.sh" 
   
   config.vm.forward_port 80, 8888
   config.vm.host_name = 'sugarcrm'
