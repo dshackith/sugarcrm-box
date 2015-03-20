@@ -14,7 +14,7 @@ node sugarcrm {
   include db
   include devtools
   include webserver
-  include elastic
+  include elasticsearch
 }
 
 
