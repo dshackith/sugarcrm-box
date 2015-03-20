@@ -1,4 +1,6 @@
 
+class {'apt::update': }
+
 node sugarcrm {
   import 'devtools'
   import 'webserver'
