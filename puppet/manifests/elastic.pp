@@ -1,8 +1,8 @@
 
 class { 'elasticsearch': 
-  package_url => 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.2.deb', 
+  package_url => 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.6.deb', 
   config => { 
-    'cluster.name' => 'project-cluster', 
+    'cluster.name' => 'sugarcrm', 
     'network' => { 'host' => '0.0.0.0', } 
     }, 
   java_install => true, 
