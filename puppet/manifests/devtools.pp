@@ -6,6 +6,9 @@ class devtools {
   package { 'vim':
   ensure => present,
 }
+service { 'iptables':		
+-    ensure => stopped		
+-  }
 
 }
 
