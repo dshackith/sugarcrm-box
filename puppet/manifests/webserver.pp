@@ -55,7 +55,7 @@ class webserver {
      exec { 'copy_config':
           command => "cp /tmp/share/*.php /var/www/html",
           path => '/bin',
-          equire => Package[apache2]
+          require => Package[apache2]
   }
   
 }
