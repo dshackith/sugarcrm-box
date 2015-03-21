@@ -49,14 +49,11 @@ class webserver {
           notify => Service[apache2],
           require => Exec["mkdir -p /var/lib/php/session"]
       }
-  
-}
-
-class sugarcrm {
-  exec { 'copy_config':
-    command => "cp /tmp/share/db_config.php /var/www/html/db_config.php",
-    path => '/bin'
+     exec { 'copy_config':
+          command => "cp /tmp/share/*.php /var/www/html",
+          path => '/bin'
   }
+  
 }
 
 class add_apache_to_vagrant_group {
