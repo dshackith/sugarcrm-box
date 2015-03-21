@@ -16,6 +16,10 @@ class webserver {
   apache::loadmodule{"rewrite":}
   # apache::loadmodule{"cache": }
   
+  php::ini { '/etc/php5/conf.d/memory_limit.ini':		
+  memory_limit   => '512M'		
+}
+  
   apache::vhost { 'default':
     priority      => '3',
     port          => '80',
