@@ -15,6 +15,7 @@ class db {
   }
   exec { 'import mysql':
     path  => '/usr/bin:/usr/sbin',
-    command => 'mysql -h localhost -u sugarcrm -psugarcrm sugarcrm < /tmp/share/sugar_basic_data.sql'
+    command => 'mysql -h localhost -u sugarcrm -psugarcrm sugarcrm < /tmp/share/sugar_basic_data.sql',
+    require => mysql::db['sugarcrm']
   }
 }
