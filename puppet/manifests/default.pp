@@ -9,12 +9,12 @@ node sugarcrm {
   import 'devtools'
   import 'webserver'
   import 'db'
-  import 'elasticsearch'
+  #import 'elasticsearch'
   
   include db
   include devtools
   include webserver
-  include elasticsearch
+  #include elasticsearch
 }
 
 
