@@ -3,6 +3,7 @@ define apache::loadmodule () {
      exec { "/usr/sbin/a2enmod $name" :
           unless => "/bin/readlink -e /etc/apache2/mods-enabled/${name}.load",
           notify => Service[apache2]
+          requires => Package[apache2]
      }
 }
 
@@ -12,9 +13,7 @@ class webserver {
   package {['php5', 'php5-mysql', 'php5-gd', 'php5-imap', 'php-apc', 'php5-memcached',  'unzip', 'php5-curl', 'php5-mbstring']: }  
   
   class { 'apache::mod::php':}
-  apache::loadmodule{"rewrite": 
-     requires => package['apache']
-     }
+  apache::loadmodule{"rewrite":}
   # apache::loadmodule{"cache": }
   
   apache::vhost { 'default':
