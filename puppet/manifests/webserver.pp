@@ -34,19 +34,32 @@ class webserver {
     docroot       => '/var/www/html',
     override      => 'All',
   }
+     exec { "create_cache_dir":
+          command => "mkdir /var/www/html/cache",
+          path => '/bin',
+          notify => Service[apache2],
+          require => Package[apache2]
+      }
+      exec { "set_ownership_cache":
+          command => "chown -R www-data:www-data /var/lib/php/session",
+          path => '/bin',
+          notify => Service[apache2],
+          require => Exec["create_session_dir"]
+      }
+      
      exec { "create_session_dir":
           command => "mkdir -p /var/lib/php/session",
           path => '/bin',
           notify => Service[apache2],
           require => Package[apache2]
       }
-     exec { "chown -R www-data:www-data /var/lib/php/session":
+     exec { "set_ownership_session":
           command => "chown -R www-data:www-data /var/lib/php/session",
           path => '/bin',
           notify => Service[apache2],
           require => Exec["create_session_dir"]
       }
-      exec { "set_perms":
+      exec { "set_perms_session":
           command => "chmod -R 775 /var/lib/php/session",
           path => '/bin',
           notify => Service[apache2],
