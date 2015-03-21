@@ -23,7 +23,7 @@ class webserver {
     docroot       => '/var/www/html',
     override      => 'All',
   }
-  php::module { [ 'mysql', 'ldap', 'pdo','mbstring' ]: }
+  #php::module { [ 'mysql', 'ldap', 'pdo','mbstring' ]: }
 
    
 }
