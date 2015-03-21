@@ -21,8 +21,8 @@ class webserver {
   max_execution_time => '120',
   post_max_size => '30M',
   upload_max_filesize => '30M',
-  apc.shm_size =>   '200M',
-  session.use_trans_sid => 0
+  #apc.shm_size =>   '200M',
+  #session.use_trans_sid => 0
   }
   
   php::module { [ 'bcmath', 'curl', 'gd', 'hash', 'imap', 'json', 'mbstring', 'openssl', 'SimpleXML', 'zip', 'zlib', 'JSMin' ]: }
