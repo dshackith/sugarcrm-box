@@ -15,7 +15,7 @@ class webserver {
 
   class { 'apache::mod::php':}
   apache::loadmodule{"rewrite": }
-  apache::loadmodule{"cache": }
+  # apache::loadmodule{"cache": }
   
   apache::vhost { 'default':
     priority      => '3',
