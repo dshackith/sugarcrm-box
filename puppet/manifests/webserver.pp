@@ -18,7 +18,10 @@ class webserver {
   
   php::ini { '/etc/php5/conf.d/memory_limit.ini':		
   memory_limit   => '512M'		
-}
+  }
+  php::ini { '/etc/php5/conf.d/apc_size.ini':	
+  apc.shm_size =>   '200m'
+  }
   
   apache::vhost { 'default':
     priority      => '3',
