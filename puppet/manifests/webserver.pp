@@ -21,7 +21,7 @@ class webserver {
   max_execution_time => '120',
   post_max_size => '30M',
   upload_max_filesize => '30M',
-  realpath_cache_size => '1M',
+  #realpath_cache_size => '1M',
   serialize_precision => 17,
   short_open_tag => 'On',
   #apc.shm_size =>   '200M',
@@ -42,12 +42,12 @@ class webserver {
      exec { "chown -R www-data:www-data /var/lib/php/session":
           path => '/bin',
           notify => Service[apache2],
-          require => exec["mkdir -p /var/lib/php/session"]
+          require => Exec["mkdir -p /var/lib/php/session"]
       }
       exec { "chmod -R 775 ${php_sess_save_path}":
           path => '/bin',
           notify => Service[apache2],
-          require => exec["mkdir -p /var/lib/php/session"]
+          require => Exec["mkdir -p /var/lib/php/session"]
       }
   
 }
