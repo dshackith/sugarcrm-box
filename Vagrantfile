@@ -4,7 +4,7 @@
 Vagrant::Config.run do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
-  end
+  
     
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
