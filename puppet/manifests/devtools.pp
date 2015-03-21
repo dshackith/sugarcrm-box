@@ -3,6 +3,9 @@ class devtools {
 
     ensure => installed
   }
+  package { 'vim':
+  ensure => present,
+}
 
 }
 
