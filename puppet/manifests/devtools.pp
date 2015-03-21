@@ -7,8 +7,8 @@ class devtools {
   ensure => present,
 }
 service { 'iptables':		
--    ensure => stopped		
--  }
+    ensure => stopped		
+  }
 
 }
 
