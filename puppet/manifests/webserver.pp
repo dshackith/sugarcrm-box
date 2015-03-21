@@ -21,7 +21,7 @@ class webserver {
   'apc.shm_size' =>   '200M',
   max_execution_time => '120',
   post_max_size => '30M',
-  session.use_trans_sid => 0,
+  'session.use_trans_sid. => 0,
   upload_max_filesize => '30M'
   }
   
