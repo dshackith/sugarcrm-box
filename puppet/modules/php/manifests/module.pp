@@ -9,7 +9,7 @@
 #  php::module { 'pecl-apc': }
 #
 define php::module ( $ensure = installed ) {
-    package { "php-${title}":
+    package { "php5-${title}":
         ensure => $ensure,
     }
 }
