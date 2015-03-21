@@ -23,6 +23,8 @@ class webserver {
   apc.shm_size =>   '200m'
   }
   
+  php::module { [ 'bcmath', 'curl', 'gd', 'hash', 'imap', 'json', 'mbstring', 'openssl', 'SimpleXML', 'zip', 'zlib', 'JSMin' ]: }
+  
   apache::vhost { 'default':
     priority      => '3',
     port          => '80',
