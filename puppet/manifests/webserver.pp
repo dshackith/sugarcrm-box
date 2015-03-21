@@ -18,11 +18,11 @@ class webserver {
   
   php::ini { '/etc/php5/conf.d/sugarcrm.ini':		
   memory_limit   => '512M',
-  'apc.shm_size' =>   '200M',
   max_execution_time => '120',
   post_max_size => '30M',
-  'session.use_trans_sid. => 0,
-  upload_max_filesize => '30M'
+  upload_max_filesize => '30M',
+  apc.shm_size =>   '200M',
+  session.use_trans_sid => 0
   }
   
   php::module { [ 'bcmath', 'curl', 'gd', 'hash', 'imap', 'json', 'mbstring', 'openssl', 'SimpleXML', 'zip', 'zlib', 'JSMin' ]: }
