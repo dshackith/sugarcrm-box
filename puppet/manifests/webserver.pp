@@ -10,7 +10,7 @@ define apache::loadmodule () {
 class webserver {
   import 'apache'
   class {'apache': }
-  package {['php5', 'php5-mysqlnd', 'php5-gd', 'php5-imap', 'php-apc', 'php5-memcached',  'unzip', 'php5-curl', 'php5-mbstring']: }  
+  package {['php5', 'php5-mysqlnd', 'php5-gd', 'php5-imap', 'php-apc', 'php5-memcached',  'unzip', 'php5-curl']: }  
   
   class { 'apache::mod::php':}
   apache::loadmodule{"rewrite":}
@@ -44,7 +44,7 @@ class webserver {
           notify => Service[apache2],
           require => Exec["mkdir -p /var/lib/php/session"]
       }
-      exec { "chmod -R 775 ${php_sess_save_path}":
+      exec { "chmod -R 775 /var/lib/php/session":
           path => '/bin',
           notify => Service[apache2],
           require => Exec["mkdir -p /var/lib/php/session"]
