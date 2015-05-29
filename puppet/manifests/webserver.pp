@@ -14,6 +14,7 @@ class webserver {
   
   class { 'apache::mod::php':}
   apache::loadmodule{"rewrite":}
+  apache::loadmodule{"headers":}
   # apache::loadmodule{"cache": }
   
   php::ini { '/etc/php5/conf.d/sugarcrm.ini':		
