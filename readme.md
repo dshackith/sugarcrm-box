@@ -6,6 +6,7 @@ locally for testing.
 
 * Install Virtual Box
 * Install [Vagrant](http://www.vagrantup.com)
+* Generate the database structure in share/skinny_db.sql (using lightdb.sh)
 * type `vagrant up` (first time will take a little while)
 
 Now edit the Vagrantfile and uncomment the :owner portion in the
