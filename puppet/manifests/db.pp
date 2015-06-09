@@ -9,7 +9,7 @@ class db {
   mysql::db { 'sugarcrm':
     user     => 'sugarcrm',
     password => 'sugarcrm',
-    host     => 'localhost',
+    host     => '%',
     grant    => ['all'],
     sql      => ['/tmp/share/skinny_db.sql']
   }
